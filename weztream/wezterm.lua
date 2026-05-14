@@ -5,16 +5,35 @@ return {
   font_size = 13.0,
 
   hide_tab_bar_if_only_one_tab = true,
+  use_fancy_tab_bar = false,
 
   window_background_opacity = 0.94,
 
   default_cursor_style = "BlinkingBar",
+  cursor_blink_rate = 650,
+
+  enable_scroll_bar = false,
+
+  adjust_window_size_when_changing_font_size = false,
+
+  window_decorations = "RESIZE",
+
+  initial_cols = 170,
+  initial_rows = 42,
 
   window_padding = {
     left = 16,
     right = 16,
     top = 12,
     bottom = 12,
+  },
+
+  keys = {
+    {
+      key = "Enter",
+      mods = "ALT",
+      action = wezterm.action.ToggleFullScreen,
+    },
   },
 
   colors = {
