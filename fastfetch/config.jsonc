@@ -1,143 +1,128 @@
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
 
   "logo": {
-    "type": "small",
-    "padding": {
-      "right": 3,
-    },
-  },
-
-  "display": {
-    "separator": "  → ",
-    "key": {
-      "width": 14,
-    },
-    "bar": {
-      "width": 18,
-      "char": {
-        "elapsed": "■",
-        "total": " ",
-      },
-    },
+    "type": "builtin",
+    "source": "Ximper",
   },
 
   "modules": [
-    {
-      "type": "title",
-      "format": "{#7}{user-name}{#} at {#2}{host-name}",
-    },
-
+    "title",
     "separator",
 
     {
       "type": "os",
-      "key": "OS",
+      "key": "󰌢 OS",
+      "keyColor": "#ff5555",
+      "outputColor": "#ff9e9e",
     },
 
     {
       "type": "kernel",
-      "key": "Kernel",
-    },
-
-    {
-      "type": "packages",
-      "key": "Packages",
+      "key": "󰒋 Kernel",
+      "keyColor": "#f1fa8c",
+      "outputColor": "#fff4b3",
     },
 
     {
       "type": "uptime",
-      "key": "Uptime",
+      "key": "󰅐 Uptime",
+      "keyColor": "#50fa7b",
+      "outputColor": "#a8ffbe",
     },
 
     {
       "type": "shell",
-      "key": "Shell",
+      "key": "󰆍 Shell",
+      "keyColor": "#8be9fd",
+      "outputColor": "#bff6ff",
     },
 
     {
       "type": "terminal",
-      "key": "Terminal",
+      "key": " Terminal",
+      "keyColor": "#7aa2ff",
+      "outputColor": "#b4caff",
     },
-
-    {
-      "type": "terminalfont",
-      "key": "Font",
-    },
-
-    "break",
 
     {
       "type": "cpu",
-      "key": "CPU",
-      "temp": true,
+      "key": "󰻠 CPU",
+      "keyColor": "#bd93f9",
+      "outputColor": "#d8beff",
     },
 
     {
       "type": "gpu",
-      "key": "GPU",
+      "key": "󰢮 GPU",
+      "keyColor": "#ff79c6",
+      "outputColor": "#ffb3df",
     },
 
     {
       "type": "memory",
-      "key": "RAM",
+      "key": "󰍛 RAM",
+      "keyColor": "#50fa7b",
+      "outputColor": "#b8ffd0",
     },
 
     {
       "type": "disk",
-      "key": "Disk",
+      "key": "󰋊 Disk",
+      "keyColor": "#f9e2af",
+      "outputColor": "#fff1c7",
+      "folders": "/",
     },
-
-    "break",
 
     {
       "type": "display",
-      "key": "Display",
+      "key": "󰍹 Display",
+      "keyColor": "#89b4fa",
+      "outputColor": "#bdd6ff",
     },
 
     {
       "type": "de",
-      "key": "DE",
+      "key": "󰧨 DE",
+      "keyColor": "#cba6f7",
+      "outputColor": "#e2ccff",
     },
 
     {
       "type": "wm",
-      "key": "WM",
+      "key": "󰖲 WM",
+      "keyColor": "#94e2d5",
+      "outputColor": "#c5fff5",
     },
 
     {
       "type": "theme",
-      "key": "Theme",
+      "key": "󰉼 Theme",
+      "keyColor": "#f38ba8",
+      "outputColor": "#ffc2d1",
     },
-
-    "break",
 
     {
       "type": "localip",
-      "key": "Network",
-      "compact": true,
+      "key": "󰩟 Network",
+      "keyColor": "#74c7ec",
+      "outputColor": "#b6eaff",
     },
 
     {
       "type": "media",
-      "key": "Now Playing",
-      "format": "{3} - {1}",
-    },
-
-    {
-      "type": "command",
-      "key": "Weather",
-      "text": "curl -s 'wttr.in/?format=%t+-+%C'",
+      "key": "󰎆 Now Playing",
+      "keyColor": "#ff79c6",
+      "outputColor": "#ffd1ec",
     },
 
     {
       "type": "datetime",
-      "key": "Time",
-      "format": "{year}-{month-pretty}-{day-pretty}  {hour-pretty}:{minute-pretty}",
+      "key": "󰥔 Time",
+      "keyColor": "#8be9fd",
+      "outputColor": "#d2f9ff",
     },
 
     "break",
-
-    "colors",
   ],
 }

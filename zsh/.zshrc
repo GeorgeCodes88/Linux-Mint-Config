@@ -6,7 +6,6 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt SHARE_HISTORY
 setopt HIST_REDUCE_BLANKS
 setopt INC_APPEND_HISTORY
-setopt AUTO_CD
 setopt INTERACTIVE_COMMENTS
 
 HISTSIZE=5000
@@ -22,10 +21,8 @@ bindkey -e
 autoload -Uz colors && colors
 setopt PROMPT_SUBST
 
-PROMPT='%(?.%F{108}.%F{203})╭─%f %F{252}%~%f %(?.%F{108}.%F{203})●%f
+PROMPT='%(?.%F{108}.%F{203})╭─%f %F{252}%/%f %(?.%F{108}.%F{203})●%f
 %(?.%F{108}.%F{203})╰─%f '
-
-RPROMPT='%F{240}%*%f'
 
 # -----------------------------
 # Completion
@@ -50,6 +47,7 @@ zstyle ':completion:*' matcher-list \
 # -----------------------------
 
 eval "$(dircolors -b)"
+eval "$(starship init zsh)"
 
 LS_COLORS='di=38;5;108:fi=38;5;252:ln=38;5;181:ex=38;5;174'
 export LS_COLORS
@@ -80,7 +78,11 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Aliases
 # -----------------------------
 
-alias ll="ls -lah --group-directories-first --color=auto"
+alias ls='eza --icons'
+alias ll='eza -la --icons'
+alias cat='bat'
+alias grep='rg'
+alias cls='clear'
 
 alias gs="git status"
 
@@ -92,7 +94,6 @@ alias downloads="cd ~/Downloads"
 alias documents="cd ~/Documents"
 
 alias config="cd ~/.config"
-alias local="cd ~/.local"
 alias bin="cd ~/.local/bin"
 
 alias wprojects="cd /media/minty/Shared/Web-Programming"
@@ -104,11 +105,21 @@ alias mzcode="code /media/minty/Shared/Web-Programming/Mziuri"
 alias etc="cd /etc"
 alias temp="cd /tmp"
 
+alias mintconfig="cd ~/minty-config"
+alias mintconfigex="nemo ~/minty-config"
+alias text="xed"
+alias rme="rm -rfvI *"
+
 # -----------------------------
 # Startup
 # -----------------------------
 
 if [[ -o interactive ]]; then
     clear
-    fastfetch --logo ~/.config/fastfetch/Logo.txt
+    fastfetch
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$HOME/.local/kitty.app/bin:$PATH"
